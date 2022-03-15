@@ -12,7 +12,7 @@ android {
         versionName "1.0"
         externalNativeBuild {
             cmake {
-                arguments "-DCMAKE_BUILD_TYPE=Release"
+                arguments "-DANDROID_STL=c++_shared", "-DCMAKE_BUILD_TYPE=Release"
             }
         }
     }
@@ -35,9 +35,20 @@ android {
         }
     }
 
-    sourceSets {
-        main.java.srcDirs += '../../jni/java'
+    buildFeatures {
+        prefabPublishing true
     }
+
+    prefab {
+        TrustWalletCore {
+            headers "../../include"
+        }
+    }
+
+    // sourceSets {
+        // main.java.srcDirs += '../../jni/java'z
+        // main.resources.srcDirs += '../../src'
+    // }
 
     externalNativeBuild {
         cmake {
