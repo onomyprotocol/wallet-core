@@ -1,5 +1,4 @@
 apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
 group='com.github.trustwallet'
 
 android {
@@ -61,5 +60,3 @@ android {
 dependencies {
     implementation 'io.grpc:grpc-protobuf:1.43.2'
 }
-
-apply from: 'maven-push.gradle'
